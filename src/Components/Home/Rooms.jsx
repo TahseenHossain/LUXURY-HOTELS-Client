@@ -5,7 +5,7 @@ const Rooms = () => {
   const [rooms, setRooms] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/rooms")
+    fetch("https://luxury-hotels-server-53q5xbzax-tahseen-hossains-projects.vercel.app/rooms")
       .then((res) => res.json())
       .then((data) => setRooms(data));
   }, []); 

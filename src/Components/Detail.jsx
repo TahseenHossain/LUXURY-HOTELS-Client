@@ -16,7 +16,7 @@ const Detail = () => {
     const date = e.target.elements.date.value;
 
     try {
-      const response = await fetch(`http://localhost:5000/booking`, {
+      const response = await fetch(`https://luxury-hotels-server-53q5xbzax-tahseen-hossains-projects.vercel.app/booking`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

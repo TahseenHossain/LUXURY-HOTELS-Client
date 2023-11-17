@@ -9,13 +9,52 @@ const LogIn = () => {
   const { signInUser, signInWithGoogle } = useContext(AuthContext);
   const navigate = useNavigate();
 
+  // const handleLogIn = (e) => {
+  //   e.preventDefault();
+  //   const form = e.target;
+  //   const email = form.email.value;
+  //   const password = form.password.value;
+
+
+  //   signInUser(email, password)
+  //     .then((result) => {
+  //       const loggedUser = result.user;
+  //       console.log(loggedUser);
+  //       const user = { email };
+  //       axios.post('https://luxury-hotels-server-53q5xbzax-tahseen-hossains-projects.vercel.app/jwt', user, {withCredentials:
+  //       true})
+  //       .then(res =>{
+  //         console.log(res.data)
+  //       })
+
+  //       Swal.fire({
+  //         title: "Success!",
+  //         text: "Log In Successful",
+  //         icon: "success",
+  //         confirmButtonText: "Cool",
+  //       });
+  //       navigate("/");
+  //     })
+
+  //     .catch((error) => {
+  //       e.target.reset();
+  //       console.error(error);
+  //       setLogInError(error.message);
+  //       Swal.fire({
+  //         title: "Failed!",
+  //         text: error.message,
+  //         icon: "error",
+  //         confirmButtonText: "Cool",
+  //       });
+  //     });
+  // };
+
   const handleLogIn = (e) => {
     e.preventDefault();
     const form = e.target;
     const email = form.email.value;
     const password = form.password.value;
-
-
+  
     signInUser(email, password)
       .then((result) => {
         Swal.fire({
@@ -26,7 +65,6 @@ const LogIn = () => {
         });
         navigate("/");
       })
-
       .catch((error) => {
         e.target.reset();
         console.error(error);
@@ -39,7 +77,7 @@ const LogIn = () => {
         });
       });
   };
-
+  
   const handleGoogleSignIn = async () => {
     try{
       await signInWithGoogle();

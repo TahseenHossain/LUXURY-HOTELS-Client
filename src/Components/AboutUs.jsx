@@ -1,14 +1,18 @@
 import { useEffect, useState } from "react";
+import axios from "axios";
 import About from "./About";
 
 const AboutUs = () => {
   const [aboutUs, setAboutUs] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/aboutUs")
-      .then((res) => res.json())
-      .then((data) => setAboutUs(data));
-  });
+    const fetchData = async () => {
+      const response = await axios.get("https://luxury-hotels-server-53q5xbzax-tahseen-hossains-projects.vercel.app/aboutUs");
+      setAboutUs(response.data);
+    };
+
+    fetchData();
+  }, []);
 
   return (
     <div>

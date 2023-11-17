@@ -1,22 +1,27 @@
 import { useEffect, useState, useContext } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
 import MyBooking from "../Components/MyBooking";
+import axios from "axios";
 import Swal from "sweetalert2";
 
 const MyBookings = () => {
   const { user } = useContext(AuthContext);
   const [bookings, setBookings] = useState([]);
 
-  const url = `http://localhost:5000/booking?email=${user?.email}`;
+  const url = `https://luxury-hotels-server-53q5xbzax-tahseen-hossains-projects.vercel.app/booking?email=${user?.email}`;
 
   useEffect(() => {
-    fetch(url)
-      .then((res) => res.json())
-      .then((data) => setBookings(data));
+    axios.get(url, {withCredentials: true})
+    .then(res => {
+      setBookings(res.data);
+    })
+    // fetch(url)
+    //   .then((res) => res.json())
+    //   .then((data) => setBookings(data));
   }, [url]);
 
   const handleDeleteBookings = (id) => {
-    fetch(`http://localhost:5000/booking/${id}`, {
+    fetch(`https://luxury-hotels-server-53q5xbzax-tahseen-hossains-projects.vercel.app/booking/${id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())
@@ -42,7 +47,7 @@ const MyBookings = () => {
   };
 
   const handleUpdateBookings = (id, newDate) => {
-    fetch(`http://localhost:5000/booking/${id}`, {
+    fetch(`https://luxury-hotels-server-53q5xbzax-tahseen-hossains-projects.vercel.app/booking/${id}`, {
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json',
@@ -54,7 +59,7 @@ const MyBookings = () => {
         if (data.modifiedCount > 0) {
           console.log("Booking updated successfully");
 
-          fetch(`http://localhost:5000/booking/${id}`)
+          fetch(`https://luxury-hotels-server-53q5xbzax-tahseen-hossains-projects.vercel.app/booking/${id}`)
             .then((res) => res.json())
             .then((updatedBooking) => {
               setBookings((prevBookings) => {

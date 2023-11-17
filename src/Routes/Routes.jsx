@@ -34,7 +34,11 @@ const router = createBrowserRouter([
         },
         {
           path: "Rooms",
-          element: <Rooms></Rooms>,
+          element: (
+            <PrivateRoute>
+              <Rooms></Rooms>
+            </PrivateRoute>
+          ),
         },
         {
           path: "/detail/:title",
@@ -43,7 +47,7 @@ const router = createBrowserRouter([
               <Detail></Detail>
             </PrivateRoute>
           ),
-          loader: () => fetch("http://localhost:5000/rooms"),
+          loader: () => fetch("https://luxury-hotels-server-53q5xbzax-tahseen-hossains-projects.vercel.app/rooms"),
         },
         {
           path: "/Review/:title",
@@ -52,12 +56,16 @@ const router = createBrowserRouter([
               <Review></Review>
             </PrivateRoute>
           ),
-          loader: () => fetch("http://localhost:5000/rooms"),
+          loader: () => fetch("https://luxury-hotels-server-53q5xbzax-tahseen-hossains-projects.vercel.app/rooms"),
         },
         {
           path: "/BookNow/:title",
-          element: <BookNow></BookNow>,
-          loader: () => fetch("http://localhost:5000/rooms"),
+          element: (
+            <PrivateRoute>
+              <BookNow></BookNow>
+            </PrivateRoute>           
+          ),
+          loader: () => fetch("https://luxury-hotels-server-53q5xbzax-tahseen-hossains-projects.vercel.app/rooms"),
         },
         {
           path: "/Career",
@@ -74,7 +82,7 @@ const router = createBrowserRouter([
               <MyBookings></MyBookings>
             </PrivateRoute>
           ),
-          loader: () => fetch("http://localhost:5000/booking"),
+          loader: () => fetch("https://luxury-hotels-server-53q5xbzax-tahseen-hossains-projects.vercel.app/booking"),
         },
     ]}
   ]);

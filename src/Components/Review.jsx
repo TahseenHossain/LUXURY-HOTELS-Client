@@ -23,7 +23,7 @@ const Review = () => {
 
     try {
       const response = await fetch(
-        `http://localhost:5000/rooms/${title}/reviews`,
+        `https://luxury-hotels-server-53q5xbzax-tahseen-hossains-projects.vercel.app/rooms/${title}/reviews`,
         {
           method: "PUT",
           headers: {
