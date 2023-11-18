@@ -9,7 +9,7 @@ const MyBooking = ({
   const openUpdateModal = () => {
     document.getElementById(`update_modal_${index}`).showModal();
   };
-
+  console.log('We are');
   return (
     <tr>
       <td className="py-2 px-4">{Title}</td>

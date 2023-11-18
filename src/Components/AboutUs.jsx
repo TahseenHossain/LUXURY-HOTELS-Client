@@ -7,7 +7,7 @@ const AboutUs = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await axios.get("https://luxury-hotels-server-53q5xbzax-tahseen-hossains-projects.vercel.app/aboutUs");
+      const response = await axios.get("https://luxury-hotels-server.vercel.app/aboutUs");
       setAboutUs(response.data);
     };
 

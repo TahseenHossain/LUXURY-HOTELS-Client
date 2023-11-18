@@ -33,7 +33,7 @@ const SignUp = () => {
       .then((result) => {
         console.log(result.user);
         const user = { name, email, password };
-        fetch("https://luxury-hotels-server-53q5xbzax-tahseen-hossains-projects.vercel.app/user", {
+        fetch("https://luxury-hotels-server.vercel.app/user", {
           method: "POST",
           headers: {
             "content-type": "application/json",

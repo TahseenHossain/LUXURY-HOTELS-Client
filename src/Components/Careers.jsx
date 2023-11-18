@@ -5,7 +5,7 @@ const Careers = () => {
     const [careers, setCareers] = useState([]);
 
     useEffect(() => {
-        fetch("https://luxury-hotels-server-53q5xbzax-tahseen-hossains-projects.vercel.app/career")
+        fetch("https://luxury-hotels-server.vercel.app/career")
           .then((res) => res.json())
           .then((data) => setCareers(data));
       });

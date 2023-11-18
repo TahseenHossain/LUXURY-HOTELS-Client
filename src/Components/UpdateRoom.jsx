@@ -3,7 +3,7 @@ import React from 'react';
 const UpdateRoom = () => {
     // {
 
-    //   const responses = await fetch(`https://luxury-hotels-server-53q5xbzax-tahseen-hossains-projects.vercel.app/rooms/${title}`, {
+    //   const responses = await fetch(`https://luxury-hotels-server.vercel.app/rooms/${title}`, {
     //     method: "PUT",
     //     headers: {
     //       "content-type": "application/json",

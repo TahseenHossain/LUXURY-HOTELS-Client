@@ -9,28 +9,6 @@ const NavBar = () => {
   const [loading, setLoading] = useState(true);
   const { user } = useContext(AuthContext);
 
-  // useEffect(() => {
-  //   const fetchUserData = async () => {
-  //     try {
-  //       const userResponse = await fetch(
-  //         `https://brand-store-server-lovat.vercel.app/user/${user.email}`
-  //       );
-  //       const userData = await userResponse.json();
-
-  //       setName(userData.name);  
-  //       setImage(userData.photoURL);
-        
-  //       setLoading(false);
-  //     } catch (error) {
-  //       //console.error(error);
-  //       setLoading(false);
-  //     }
-  //   };
-
-  //   if (user) {
-  //     fetchUserData();
-  //   }
-  // }, [user]);
 
   const handleLogOut = () => {
     logOut()
@@ -100,6 +78,16 @@ const NavBar = () => {
             }
           >
             Career
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            to="/LogIn"
+            className={({ isActive, isPending }) =>
+              isPending ? "pending" : isActive ? "underline" : ""
+            }
+          >
+            Log In
           </NavLink>
         </li>
       </ul>
