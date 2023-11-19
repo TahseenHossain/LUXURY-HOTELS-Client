@@ -73,7 +73,7 @@ const Detail = () => {
           </h3>
           <h3 className="text-5xl font-bold">Room Size:{detail.room_size}</h3>
           <h3 className="text-5xl font-bold">
-            Free Rooms:{detail.number_of_rooms}
+            Number of Reviews:{detail.reviews.length}
           </h3>
           <h3 className="text-7xl">{detail.short_description}</h3>
           <h3 className="text-4xl">{detail.long_description}</h3>

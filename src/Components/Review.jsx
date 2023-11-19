@@ -12,12 +12,12 @@ const Review = () => {
 
   const handleReview = async (e) => {
     e.preventDefault();
-    const reviews = e.target.elements.review.value;
+    const review = e.target.elements.review.value;
     const rating = parseInt(document.querySelector('input[name="rating-1"]:checked').value);
 
     const updateReviews = {
       email: email,
-      reviews: reviews,
+      review: review,
       rating: rating,
     };
 
